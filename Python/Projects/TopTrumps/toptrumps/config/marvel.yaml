@@ -1,0 +1,43 @@
+heroes:
+  spiderman:
+    strength: 75
+    speed: 60
+    intelligence: 90
+    skills: 76
+    reflexes: 70
+    top_trumps_rating: 75
+    real_name: "Peter Parker"
+  captain_america:
+    strength: 80
+    speed: 60
+    intelligence: 70
+    skills: 90
+    reflexes: 90
+    top_trumps_rating: 85
+    real_name: "Steve Rogers"
+  ironman:
+    strength: 50
+    speed: 90
+    intelligence: 95
+    skills: 85
+    reflexes: 50
+    top_trumps_rating: 84
+    real_name: "Tony Stark"
+  hulk:
+    strength: 99
+    speed: 55
+    intelligence: 45
+    skills: 72
+    reflexes: 55
+    top_trumps_rating: 82
+    real_name: "Bruce Banner"
+
+villains:
+  green_goblin:
+    strength: 80
+    speed: 45
+    intelligence: 95
+    skills: 60
+    reflexes: 60
+    top_trumps_rating: 65
+    real_name: "Norman Osborn"
