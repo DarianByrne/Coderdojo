@@ -22,7 +22,10 @@ class TopTrumpCard:
         """
         Function to print the stats available to the specific card type
         """
-        pass
+        stats = vars(self)
+        for stat, value in stats.items():
+            if stat != "name":
+                print(f"{stat}: {value}")
 
     def get(self, current_stat) -> int:
         """
@@ -30,7 +33,14 @@ class TopTrumpCard:
         :param current_stat:
         :return: int value of selected stat
         """
-        pass
+        value = getattr(self, current_stat, None)
+        if value is None:
+            raise ValueError(f"Stat '{current_stat}' does not exist on this card.")
+        if not isinstance(value, int):
+            raise TypeError(
+                f"Stat '{current_stat}' must be an integer, got {type(value).__name__}."
+            )
+        return value
 
 
 """"
@@ -52,15 +62,21 @@ class Player:
     has_choice_of_stat: bool = False
 
     def has_cards_left(self) -> bool:
-        """
-        Simple boolean, is the player still in the game
-        :return: True/False depending on whether or not they have any cards
-        """
+        return len(self.hand) > 0
 
     def choose_stat(self, card_type: TopTrumpCard) -> str:
-        """
-        Function for prompting the player to choose a stat
-        """
+        if self.type == "human":
+            print(f"{self.name}, choose a stat from the following:")
+            card_type.print_stats()
+            return input("Enter the stat name: ")
+        else:
+            # AI chooses the stat with the highest numeric value
+            numeric_stats = {
+                stat: value
+                for stat, value in vars(card_type).items()
+                if isinstance(value, int)
+            }
+            return max(numeric_stats, key=numeric_stats.get)
 
 
 """
@@ -79,27 +95,9 @@ class Deck:
         shuffle(self.cards)
 
     def deal(self, players: List[Player]):
-        """
-        Function to deal the cards at the start of the game.
-        Example logic
-        number of players
-        number of cards
-        number of cards // number of players eg 100 // 4
-        number of cards per player 25
-        player one gets cards[0:25]
-        player two get cards[25:50]
-        player three get cards[50:75]
-        player four get cards[75:100]
-        """
-
-"""
-Game
-- Invite players to join
-- Shuffle and deal
-- First turn
-- Give cards to the victor
-- End when only one player has cards
-"""
+        num_players = len(players)
+        for i, card in enumerate(self.cards):
+            players[i % num_players].hand.append(card)
 
 
 class TopTrumpsGame:
@@ -111,27 +109,66 @@ class TopTrumpsGame:
         self.players[0].has_choice_of_stat = True
 
     def deal_cards(self):
-        """
-        Deal cards to all players
-        """
+        self.deck.deal(self.players)
 
     def prompt_player_to_choose_stat(self):
-        """
-        Find the player who's turn it is and prompt them for a decision on which stat we want
-        """
+        for player in self.players:
+            if player.has_choice_of_stat:
+                while True:
+                    self.current_stat = player.choose_stat(player.hand[0])
+                    if hasattr(player.hand[0], self.current_stat):
+                        break
+                    print(f"Invalid stat '{self.current_stat}'. Please try again.")
+
     def reveal_cards(self):
-        """
-        Reveal everyones top card
-        :return:
-        """
+        print("Revealing cards:")
+        current_round = {}
+        for player in self.players:
+            if player.has_cards_left():
+                card = player.hand[0]
+                stat_value = getattr(card, self.current_stat)
+                current_round[stat_value] = player
+                print(
+                    f"{player.name} reveals {card.name} with {self.current_stat}: {stat_value}"
+                )
+        return current_round
 
     def give_cards_to_the_winner(self, current_round: dict):
-        """
-        Resolve the round
-        :param current_round: dictionary of stat value: and the owner of the card
-        """
+        winning_stat = max(current_round.keys())
+        winners = [
+            player
+            for stat_value, player in current_round.items()
+            if stat_value == winning_stat
+        ]
+
+        if len(winners) > 1:
+            print("It's a draw! No one wins this round.")
+            for player in self.players:
+                if player.has_cards_left():
+                    player.hand.append(player.hand.pop(0))
+            return
+
+        winner = winners[0]
+        print(f"{winner.name} wins this round!")
+        for stat_value, player in current_round.items():
+            winner.hand.append(player.hand.pop(0))
+        winner.has_choice_of_stat = True
+        for player in self.players:
+            if player != winner:
+                player.has_choice_of_stat = False
 
     def continue_playing(self) -> bool:
+        active_players = [player for player in self.players if player.has_cards_left()]
+        return len(active_players) > 1
+
+    def play_game(self):
         """
-        Function to determine if the game has ended
+        Main game loop to play the game until a winner is determined
         """
+        self.deal_cards()
+        while self.continue_playing():
+            self.prompt_player_to_choose_stat()
+            current_round = self.reveal_cards()
+            self.give_cards_to_the_winner(current_round)
+        winner = [player for player in self.players if player.has_cards_left()][0]
+        print(f"{winner.name} is the winner!")

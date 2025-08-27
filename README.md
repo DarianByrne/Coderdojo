@@ -1,6 +1,7 @@
 # CoderDojo Projects
 
 This repository contains a collection of projects I worked on during my time at CoderDojo in 2022. These projects were created to learn and practice programming concepts in Python while having fun building games and applications. Unfortunately, I don't have access to copies of my work from other years. We didn't have time to finish Top Trumps.
+I decided to try having fun with "vibe coding" the rest of the Top Trumps game. I had to steer it a lot but overall the game works well with some small bugs I might not have found. The new characters in marvel.yaml are from the AI, I chose not to edit it's output.
 
 ## Projects
 
@@ -84,4 +85,4 @@ This repository is licensed under the MIT License. See the `LICENSE` file for de
 
 ## AI Disclosure
 
-Code in this repository is written by Darian Byrne. This README was generated with the help of GitHub Copilot running GPT-4o.
+Code in this repository is written by Darian Byrne. This README was generated with the help of GitHub Copilot running GPT-4o. Some implementation in this branch was made by GitHub Copilot running GPT-4o.

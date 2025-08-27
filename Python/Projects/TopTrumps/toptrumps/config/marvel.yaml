@@ -31,13 +31,261 @@ heroes:
     reflexes: 55
     top_trumps_rating: 82
     real_name: "Bruce Banner"
+  thor:
+    strength: 95
+    speed: 70
+    intelligence: 80
+    skills: 85
+    reflexes: 75
+    top_trumps_rating: 90
+    real_name: "Thor Odinson"
+  black_widow:
+    strength: 65
+    speed: 75
+    intelligence: 85
+    skills: 95
+    reflexes: 85
+    top_trumps_rating: 80
+    real_name: "Natasha Romanoff"
+  doctor_strange:
+    strength: 60
+    speed: 50
+    intelligence: 95
+    skills: 90
+    reflexes: 65
+    top_trumps_rating: 88
+    real_name: "Stephen Strange"
+  black_panther:
+    strength: 80
+    speed: 85
+    intelligence: 80
+    skills: 90
+    reflexes: 85
+    top_trumps_rating: 88
+    real_name: "T'Challa"
+  scarlet_witch:
+    strength: 75
+    speed: 70
+    intelligence: 90
+    skills: 95
+    reflexes: 80
+    top_trumps_rating: 92
+    real_name: "Wanda Maximoff"
+  ant_man:
+    strength: 65
+    speed: 60
+    intelligence: 75
+    skills: 80
+    reflexes: 70
+    top_trumps_rating: 78
+    real_name: "Scott Lang"
+  hawkeye:
+    strength: 60
+    speed: 70
+    intelligence: 75
+    skills: 95
+    reflexes: 85
+    top_trumps_rating: 80
+    real_name: "Clint Barton"
+  vision:
+    strength: 85
+    speed: 80
+    intelligence: 90
+    skills: 85
+    reflexes: 80
+    top_trumps_rating: 88
+    real_name: "Vision"
+  falcon:
+    strength: 70
+    speed: 85
+    intelligence: 75
+    skills: 80
+    reflexes: 80
+    top_trumps_rating: 82
+    real_name: "Sam Wilson"
+  shang_chi:
+    strength: 75
+    speed: 80
+    intelligence: 70
+    skills: 95
+    reflexes: 85
+    top_trumps_rating: 88
+    real_name: "Shang-Chi"
+  moon_knight:
+    strength: 80
+    speed: 70
+    intelligence: 75
+    skills: 85
+    reflexes: 80
+    top_trumps_rating: 84
+    real_name: "Marc Spector"
+  she_hulk:
+    strength: 90
+    speed: 65
+    intelligence: 85
+    skills: 80
+    reflexes: 75
+    top_trumps_rating: 86
+    real_name: "Jennifer Walters"
+  nova:
+    strength: 85
+    speed: 90
+    intelligence: 80
+    skills: 85
+    reflexes: 80
+    top_trumps_rating: 90
+    real_name: "Richard Rider"
+  spider_woman:
+    strength: 70
+    speed: 75
+    intelligence: 80
+    skills: 85
+    reflexes: 85
+    top_trumps_rating: 82
+    real_name: "Jessica Drew"
 
 villains:
   green_goblin:
-    strength: 80
-    speed: 45
-    intelligence: 95
-    skills: 60
-    reflexes: 60
-    top_trumps_rating: 65
+    strength: 85
+    speed: 65
+    intelligence: 80
+    skills: 75
+    reflexes: 70
+    top_trumps_rating: 84
     real_name: "Norman Osborn"
+  thanos:
+    strength: 99
+    speed: 65
+    intelligence: 90
+    skills: 85
+    reflexes: 70
+    top_trumps_rating: 95
+    real_name: "Thanos"
+  loki:
+    strength: 70
+    speed: 60
+    intelligence: 85
+    skills: 80
+    reflexes: 75
+    top_trumps_rating: 78
+    real_name: "Loki Laufeyson"
+  ultron:
+    strength: 85
+    speed: 70
+    intelligence: 95
+    skills: 85
+    reflexes: 80
+    top_trumps_rating: 90
+    real_name: "Ultron"
+  red_skull:
+    strength: 70
+    speed: 55
+    intelligence: 85
+    skills: 75
+    reflexes: 65
+    top_trumps_rating: 72
+    real_name: "Johann Schmidt"
+  venom:
+    strength: 85
+    speed: 70
+    intelligence: 65
+    skills: 80
+    reflexes: 75
+    top_trumps_rating: 80
+    real_name: "Eddie Brock"
+  mysterio:
+    strength: 60
+    speed: 50
+    intelligence: 90
+    skills: 85
+    reflexes: 60
+    top_trumps_rating: 75
+    real_name: "Quentin Beck"
+  killmonger:
+    strength: 80
+    speed: 70
+    intelligence: 75
+    skills: 85
+    reflexes: 80
+    top_trumps_rating: 82
+    real_name: "Erik Killmonger"
+  dormammu:
+    strength: 95
+    speed: 60
+    intelligence: 90
+    skills: 85
+    reflexes: 70
+    top_trumps_rating: 92
+    real_name: "Dormammu"
+  kingpin:
+    strength: 75
+    speed: 50
+    intelligence: 85
+    skills: 70
+    reflexes: 60
+    top_trumps_rating: 78
+    real_name: "Wilson Fisk"
+  magneto:
+    strength: 80
+    speed: 60
+    intelligence: 90
+    skills: 85
+    reflexes: 70
+    top_trumps_rating: 88
+    real_name: "Erik Lehnsherr"
+  apocalypse:
+    strength: 95
+    speed: 70
+    intelligence: 85
+    skills: 90
+    reflexes: 75
+    top_trumps_rating: 92
+    real_name: "En Sabah Nur"
+  sandman:
+    strength: 75
+    speed: 50
+    intelligence: 65
+    skills: 70
+    reflexes: 60
+    top_trumps_rating: 72
+    real_name: "Flint Marko"
+  electro:
+    strength: 70
+    speed: 80
+    intelligence: 70
+    skills: 75
+    reflexes: 75
+    top_trumps_rating: 78
+    real_name: "Max Dillon"
+  galactus:
+    strength: 100
+    speed: 70
+    intelligence: 95
+    skills: 90
+    reflexes: 80
+    top_trumps_rating: 98
+    real_name: "Galactus"
+  mephisto:
+    strength: 85
+    speed: 60
+    intelligence: 90
+    skills: 85
+    reflexes: 70
+    top_trumps_rating: 88
+    real_name: "Mephisto"
+  taskmaster:
+    strength: 75
+    speed: 70
+    intelligence: 80
+    skills: 95
+    reflexes: 85
+    top_trumps_rating: 86
+    real_name: "Tony Masters"
+  abomination:
+    strength: 95
+    speed: 60
+    intelligence: 70
+    skills: 75
+    reflexes: 65
+    top_trumps_rating: 84
+    real_name: "Emil Blonsky"
